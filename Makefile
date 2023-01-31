@@ -10,11 +10,11 @@ CCFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-MLX_PATH = ./minilibx_opengl
+MLX_PATH = ./minilibx_opengl_20191021
 
 MLX = libmlx.a
 
-MLX_FLAGS = -lmlx -framework OpenGL -framework -AppKit
+MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -I$(MLX_PATH) -c $< -o $@
@@ -25,7 +25,7 @@ $(MLX):		$(OBJ)
 			make -C $(MLX_PATH)
 
 $(NAME):	$(MLX) $(OBJ)
-			$(CC) $(CCFLAGS) $(OBJ) -L$(MLX_PATH) $(MLX_FLAGS)
+			$(CC) $(CCFLAGS) $(OBJ) -L$(MLX_PATH) $(MLX_FLAGS) -o $(NAME)
 
 clean:		$(OBJ)
 			$(RM) $(OBJ)
