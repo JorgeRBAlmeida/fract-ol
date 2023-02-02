@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:22:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/01 16:14:38 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:58:30 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 int mandelbrot(double x, double y, t_data *data)
 {
-	int limit = 100;
+	int limit = 1000;
 	double new_z_r;
 	int i = 0;
 	double z_r = 0;
@@ -53,7 +53,7 @@ int mandelbrot(double x, double y, t_data *data)
 
 int julia(double x, double y, double c_r, double c_im, t_data *data)
 {
-	int limit = 100;
+	int limit = 1000;
 	double new_z_r;
 	double z_r = x;
 	double z_im = y;
