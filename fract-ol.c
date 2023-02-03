@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:03:51 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/03 17:13:53 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:16:24 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,5 @@ int	main(int argc, char **argv)
 		mlx_loop(fract.mlx);
 	}
 	else
-	{
-		ft_putstr_fd("** ATENÇÃO **\nOs argumentos aceitos são:\n", 1);
-		ft_putstr_fd("mandelbrot, julia\n", 1);
-		ft_putstr_fd("Escolhendo julia ponha mais um argumento de 1 a 6.\n", 1);
-		ft_putstr_fd("ex:\n./fract-ol mandelbrot\n./fract-ol julia 3\n", 1);
-		ft_putstr_fd("./fract-ol julia 5\n", 1);
-	}
+		invalid_arg_msger();
 }
