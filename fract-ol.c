@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:03:51 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/03 17:11:31 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:13:53 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	pixel_drawer(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-double	adjuster(int axis_point, int axis_window_size)
+double	converter(int axis_point, int axis_window_size)
 {
 	double	min_size;
 	double	max_size;
@@ -45,11 +45,11 @@ void	drawer(t_data *data, char **argv)
 		while (y < data->height)
 		{
 			if (ft_strncmp(argv[1], "mandelbrot", 10) == 0)
-				it = mandelbrot(adjuster(x, data->width), \
-								adjuster(y, data->height));
+				it = mandelbrot(converter(x, data->width), \
+								converter(y, data->height));
 			else if (ft_strncmp(argv[1], "julia", 5) == 0)
-				it = julia_selector(adjuster(x, data->width), \
-									adjuster(y, data->height), argv);
+				it = julia_selector(converter(x, data->width), \
+									converter(y, data->height), argv);
 			if (it == 100)
 				pixel_drawer(data, x, (data->height - 1) - y, 0x00110000);
 			else
