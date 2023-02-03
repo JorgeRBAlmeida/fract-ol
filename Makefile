@@ -1,6 +1,6 @@
 NAME = fract-ol
 
-SRC = fract-ol.c equations.c support.c
+SRC = fract-ol.c equations.c utils.c
 
 OBJ =	${SRC:.c=.o}
 

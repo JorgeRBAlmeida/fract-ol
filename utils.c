@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 18:04:11 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/03 17:16:06 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:19:12 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_putstr_fd(char *s, int fd)
 	write(fd, s, len);
 }
 
-void	invalid_arg_msger() {
+void	invalid_arg_msger(void) {
 	ft_putstr_fd("** ATENÇÃO **\nOs argumentos aceitos são:\n", 1);
 	ft_putstr_fd("mandelbrot, julia\n", 1);
 	ft_putstr_fd("Escolhendo julia ponha mais um argumento de 1 a 6.\n", 1);
