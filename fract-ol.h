@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 18:59:49 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/02 19:42:35 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:02:57 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,19 @@ typedef struct	s_data {
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
-	int		s_height;
-	int		s_width;
+	int		height;
+	int		width;
 	int		endian;
 	void	*mlx;
 	void	*mlx_win;
 }				t_data;
 
-int mandelbrot(double x, double y, t_data *data);
-int julia(double x, double y, double c_r, double c_im, t_data *data);
+int mandelbrot(double x, double y);
+int julia(double x, double y, double c_r, double c_im);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 void	ft_putstr_fd(char *s, int fd);
+int	ft_argv2cmp(char **argv, const char *range);
+int	julia_selector(double x, double y, char **argv);
 
 #endif

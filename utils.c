@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   support.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 18:04:11 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/02 19:14:53 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:54:17 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,21 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	else
 		return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
+int	ft_argv2cmp(char **argv, const char *range)
+{
+	int	i;
+
+	i = 0;
+	if (argv[2][1] != '\0')
+		return (1);
+	while (argv[2][0] && range[i] && (argv[2][0] != range[i]))
+		i ++;
+	if (range[i])
+		return (0);
+	else
+		return (1);
 }
 
 size_t	ft_strlen(const char *s)
