@@ -1,6 +1,6 @@
-NAME = fract-ol
+NAME = fractol
 
-SRC = fract-ol.c equations.c utils.c
+SRC = fractol.c equations.c utils.c hooks.c
 
 OBJ =	${SRC:.c=.o}
 
@@ -19,21 +19,20 @@ MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -I$(MLX_PATH) -c $< -o $@
 
-all:	$(NAME)
+all:	$(OBJ) $(MLX) $(NAME)
 
-$(MLX):		$(OBJ)
+$(MLX):
 			make -C $(MLX_PATH)
 
-$(NAME):	$(MLX) $(OBJ)
-			$(CC) $(CCFLAGS) $(OBJ) -L$(MLX_PATH) $(MLX_FLAGS) -o $(NAME)
+$(NAME):	$(OBJ)
+			$(CC) -Ofast $(OBJ) -L$(MLX_PATH) $(MLX_FLAGS) -o $(NAME)
 
-clean:		$(OBJ)
+clean:
 			$(RM) $(OBJ)
+			make -C $(MLX_PATH) clean
 
 fclean:		clean
 			$(RM) $(NAME)
-			make -C $(MLX_PATH) clean
-			$(RM) $(MLX)
 
 re: fclean all
 
