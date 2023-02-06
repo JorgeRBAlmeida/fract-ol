@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 13:46:31 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/06 17:06:43 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:08:53 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ int	exit_program(t_data *data)
 
 void	invalid_arg_event(void)
 {
-	ft_putstr_fd("** ATENÇÃO **\nOs argumentos aceitos são:\n", 1);
-	ft_putstr_fd("mandelbrot, julia\n", 1);
-	ft_putstr_fd("Escolhendo julia ponha mais um argumento de 1 a 6.\n", 1);
-	ft_putstr_fd("ex:\n./fract-ol mandelbrot\n./fract-ol julia 3\n", 1);
-	ft_putstr_fd("./fract-ol julia 5\n", 1);
+	ft_putstr_fd("******** ATENÇÃO ********\nOs argumentos aceitos são:\n", 1);
+	ft_putstr_fd("./fractol mandelbrot\n./fractol julia 1\n", 1);
+	ft_putstr_fd("./fractol julia 2\n./fractol julia 3\n", 1);
+	ft_putstr_fd("./fractol julia 4\n./fractol julia 5\n", 1);
+	ft_putstr_fd("./fractol julia 6\n", 1);
 }
