@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.c                                           :+:      :+:    :+:   */
+/*   events_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 13:46:31 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/06 18:08:53 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/06 19:36:18 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	mouse_event(int mouse_code, int x, int y, t_data *data)
 	}
 	else if (mouse_code == 4)
 	{
-		data->sizes.zoom = data->sizes.zoom * 0.9;
+		data->sizes.zoom = data->sizes.zoom * 0.95;
 		drawer(data);
 	}
 	return (0);
@@ -37,22 +37,22 @@ int	key_event(int key_code, t_data *data)
 	}
 	else if (key_code == ARROW_LEFT)
 	{
-		data->sizes.mx = data->sizes.mx - 0.1;
+		data->sizes.mx = data->sizes.mx - 0.5;
 		drawer(data);
 	}
 	else if (key_code == ARROW_RIGHT)
 	{
-		data->sizes.mx = data->sizes.mx + 0.1;
+		data->sizes.mx = data->sizes.mx + 0.5;
 		drawer(data);
 	}
 	else if (key_code == ARROW_DOWN)
 	{
-		data->sizes.my = data->sizes.my - 0.1;
+		data->sizes.my = data->sizes.my - 0.5;
 		drawer(data);
 	}
 	else if (key_code == ARROW_UP)
 	{
-		data->sizes.my = data->sizes.my + 0.1;
+		data->sizes.my = data->sizes.my + 0.5;
 		drawer(data);
 	}
 	return (0);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maker.c                                            :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:40:06 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/06 17:23:23 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/06 19:30:29 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	init_setting(t_data *fract, char **argv)
 {
 	fract->mlx = mlx_init();
-	fract->height = 1000;
-	fract->width = 1000;
+	fract->height = 700;
+	fract->width = 700;
 	fract->sizes.max = 2;
 	fract->sizes.min = -2;
 	fract->sizes.mx = 0;
@@ -71,9 +71,9 @@ void	drawer(t_data *data)
 				it = julia_selector(converter(x, data->width, data, data->\
 	sizes.mx), converter(y, data->height, data, data->sizes.my), data->argv);
 			if (it == 100)
-				pixel_drawer(data, x, 999 - y, 0x00110000);
+				pixel_drawer(data, x, data->height - y - 1, 0x00110000);
 			else
-				pixel_drawer(data, x, 999 - y, 0x00032af2 * it);
+				pixel_drawer(data, x, data->height - y - 1, 0x00032af2 * it);
 			y ++;
 		}
 		x ++;
