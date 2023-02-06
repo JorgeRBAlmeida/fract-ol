@@ -1,8 +1,14 @@
 NAME = fractol
 
+NAME_BONUS = fractol_bonus
+
 SRC = fractol.c equations.c utils.c events.c render.c
 
+SRC_BONUS = fractol_bonus.c equations_bonus.c utils_bonus.c events_bonus.c render_bonus.c
+
 OBJ = ${SRC:.c=.o}
+
+OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 CC = cc
 
@@ -17,7 +23,7 @@ MLX = libmlx.a
 MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -I$(MLX_PATH) -c $< -o $@
+	$(CC) ${CCFLAGS} -I$(MLX_PATH) -c $< -o $@
 
 all:	$(OBJ) $(MLX) $(NAME)
 
@@ -27,8 +33,14 @@ $(MLX):
 $(NAME):	$(OBJ)
 			$(CC) -Ofast $(OBJ) -L$(MLX_PATH) $(MLX_FLAGS) -o $(NAME)
 
+bonus: $(NAME_BONUS) 
+
+$(NAME_BONUS):	$(OBJ_BONUS) $(MLX)
+				$(CC) -Ofast $(OBJ_BONUS) -L$(MLX_PATH) $(MLX_FLAGS) -o $(NAME)
+
 clean:
 			$(RM) $(OBJ)
+			$(RM) $(OBJ_BONUS)
 			make -C $(MLX_PATH) clean
 
 fclean:		clean
@@ -36,4 +48,4 @@ fclean:		clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
