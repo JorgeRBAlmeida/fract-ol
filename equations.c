@@ -6,14 +6,11 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:22:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/06 17:07:47 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:50:04 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-//z0 -> [0 + 0i]
-//while ((z_r >= -2 && z_r <= 2) && (z_im >= -2 && z_im <= 2))
 
 double	my_pow(double num, int times)
 {
