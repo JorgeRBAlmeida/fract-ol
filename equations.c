@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:22:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2023/02/04 16:58:19 by joalmeid         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:07:47 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 double	my_pow(double num, int times)
 {
-	double result;
+	double	result;
 
 	result = 1;
 	while (times > 0)
@@ -78,7 +78,7 @@ int	julia(double x, double y, double c_r, double c_im)
 	double	z_r;
 	double	z_im;
 	int		i;
-	
+
 	limit = 100;
 	new_z_r = 0;
 	z_r = x;

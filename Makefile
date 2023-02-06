@@ -1,8 +1,8 @@
 NAME = fractol
 
-SRC = fractol.c equations.c utils.c hooks.c
+SRC = fractol.c equations.c utils.c events.c render.c
 
-OBJ =	${SRC:.c=.o}
+OBJ = ${SRC:.c=.o}
 
 CC = cc
 
@@ -22,7 +22,7 @@ MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 all:	$(OBJ) $(MLX) $(NAME)
 
 $(MLX):
-			make -C $(MLX_PATH)
+			@make -C $(MLX_PATH)
 
 $(NAME):	$(OBJ)
 			$(CC) -Ofast $(OBJ) -L$(MLX_PATH) $(MLX_FLAGS) -o $(NAME)
